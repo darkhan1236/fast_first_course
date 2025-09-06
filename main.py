@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
 
-from backend.database import delete_tables, create_tables
-from backend.router import router as tasks_router
+from database import delete_tables, create_tables
+from router import router as tasks_router
 
 
 @asynccontextmanager 

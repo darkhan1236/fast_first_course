@@ -1,8 +1,8 @@
 from typing import Annotated
 from fastapi import APIRouter, Depends
 
-from backend.repository import TaskRepository
-from backend.schemas import STaskAdd, STaskId, STaskRead
+from repository import TaskRepository
+from schemas import STaskAdd, STaskId, STaskRead
 
 router = APIRouter(
     prefix="/tasks",
@@ -23,4 +23,4 @@ async def add_task(
 # Здесь -> list[STaskRead] означает: функция вернёт список объектов STaskRead
 async def get_tasks() -> list[STaskRead]:
     tasks = await TaskRepository.find_all()
-    return {"tasks": tasks}
+    return tasks
